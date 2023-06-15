@@ -6,7 +6,7 @@ public class Main {
         doctor.printId();
         doctor.printData();
 
-        Doctor doctora = new Doctor("Erika-chan", "erikachan@amor.com","Amar yeyo-san");
+        Doctor doctora = new Doctor("Erika-chan", "Erikachan@amor.com","Amar yeyo-san");
         doctora.printId();
         doctora.printData();
 

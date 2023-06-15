@@ -20,7 +20,7 @@ public class Patient extends User{
     }
 
     public int getPhoneNumber() {
-        return getPhoneNumber();
+        return phoneNumber;
     }
 
     public void setPhoneNumber(int phoneNumber) {
