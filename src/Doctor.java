@@ -1,19 +1,18 @@
-public class Doctor {
+public class Doctor extends User {
     // Atributos
     static int id = 0;
-    String name;
     String speacilty;
 
     // Constructor
-    public Doctor(String name, String speacilty){
-        this.name=name;
+    public Doctor(String name, String email, String speacilty){
+        super(name, email);
         this.speacilty=speacilty;
         id++;
     }
 
     // Metodos
     public void printData(){
-        System.out.println(name + " " + speacilty);
+        System.out.println(getName() + " " + speacilty);
     }
     public void printId(){
         System.out.println(id);

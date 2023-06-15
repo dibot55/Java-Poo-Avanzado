@@ -1,17 +1,13 @@
-public class Acceso {
+public class Patient extends User{
     // Modificadores de acceso
-    private String name;
-    private String email;
-    private String address;
     private int phoneNumber;
     private String birthday;
     private double weight;
     private double height;
     private String blood;
 
-    public Acceso(String name, String email){
-        this.name=name;
-        this.email=email;
+    public Patient(String name, String email){
+        super(name, email);
     }
 
     // Encapsulamiento
@@ -24,7 +20,7 @@ public class Acceso {
     }
 
     public int getPhoneNumber() {
-        return phoneNumber;
+        return getPhoneNumber();
     }
 
     public void setPhoneNumber(int phoneNumber) {

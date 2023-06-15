@@ -2,11 +2,11 @@ import java.util.Date;
 
 public class Main {
     public static void main(String[] args) {
-        Doctor doctor = new Doctor("yeyo-san", "Amar a Erika chan");
+        Doctor doctor = new Doctor("yeyo-san", "yeyosan@amor.com", "Amar a Erika chan");
         doctor.printId();
         doctor.printData();
 
-        Doctor doctora = new Doctor("Erika-chan", "Amar yeyo-san");
+        Doctor doctora = new Doctor("Erika-chan", "erikachan@amor.com","Amar yeyo-san");
         doctora.printId();
         doctora.printData();
 
