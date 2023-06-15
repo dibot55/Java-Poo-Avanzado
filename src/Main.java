@@ -1,3 +1,5 @@
+import java.util.Date;
+
 public class Main {
     public static void main(String[] args) {
         Doctor doctor = new Doctor("yeyo-san", "Amar a Erika chan");
@@ -8,6 +10,16 @@ public class Main {
         doctora.printId();
         doctora.printData();
 
-        Peliculas.pelicula();
+        // Instanciar una clase anidada
+        Anidacion fecha = new Anidacion();
+        fecha.addAvailableAppointment(new Date(), new Date().getTime());
+        fecha.addAvailableAppointment(new Date(), new Date().getTime());
+        fecha.addAvailableAppointment(new Date(), new Date().getTime());
+
+        for (Anidacion.AvailableAppointment arr: fecha.getAvailableAppointment()
+             ) {
+            System.out.println(arr.getDate() + " " + arr.getTime());
+        }
+
     }
 }
