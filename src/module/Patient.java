@@ -28,4 +28,10 @@ public class Patient extends User {
     public String toString() {
         return super.toString() + " birithday: "+ birthday + " blood:" + blood + " height:" + height + " weight: " + getWeight();
     }
+
+    @Override
+    public void showDataUser() {
+        System.out.println("Hospital: Cruz roja");
+        System.out.println("Departamento: Sala de espera");
+    }
 }

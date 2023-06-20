@@ -25,4 +25,10 @@ public class Doctor extends User {
     public String toString() {
         return super.toString() + " Specialiity: " + speacilty + " Avaiilable: ";
     }
+
+    @Override
+    public void showDataUser() {
+        System.out.println("Hospital: Cruz roja");
+        System.out.println("Departamento: Cancerologiia");
+    }
 }
