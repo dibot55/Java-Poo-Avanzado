@@ -1,13 +1,14 @@
 public class Patient extends User{
     // Modificadores de acceso
-    private int phoneNumber;
     private String birthday;
     private double weight;
     private double height;
     private String blood;
 
-    public Patient(String name, String email){
-        super(name, email);
+    // Sobreescritura de constructores - polimorfisimo
+    public Patient(String name, String email, int phoneNumber, double weight){
+        super(name, email, phoneNumber);
+        this.weight=weight;
     }
 
     // Encapsulamiento
@@ -19,17 +20,8 @@ public class Patient extends User{
         this.weight = weight;
     }
 
-    public int getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(int phoneNumber) {
-        if (phoneNumber > 8) {
-            System.out.println("No se permiten colocar numeros mayores a 8 digitos");
-        } else if(phoneNumber==8){
-            this.phoneNumber = phoneNumber;
-        } else {
-            System.out.println("No se permiten numeros menores a 8 digitos");
-        }
+    @Override
+    public String toString() {
+        return super.toString() + " birithday: "+ birthday + " blood:" + blood + " height:" + height + " weight: " + getWeight();
     }
 }

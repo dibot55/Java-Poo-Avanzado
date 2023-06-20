@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Peliculas {
+public class Constantes {
     // Constantes
     public static final double PI= 3.1415936;
     public static final String[] PELICULAS={

@@ -17,6 +17,11 @@ public class Anidacion {
         public long getTime(){
             return time;
         }
+
+        @Override
+        public String toString() {
+            return "Available Apointment \nDate: " + getDate() + "\nTime: " + getTime();
+        }
     }
 
     // Coleccion
@@ -29,4 +34,10 @@ public class Anidacion {
         return availableAppointment;
     }
 
+    @Override
+    public String toString() {
+        return "Anidacion{\n" +
+                "availableAppointment=" + availableAppointment.toString() +
+                "\n}";
+    }
 }

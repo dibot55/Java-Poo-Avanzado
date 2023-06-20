@@ -4,11 +4,12 @@ public class Doctor extends User {
     String speacilty;
 
     // Constructor
-    public Doctor(String name, String email, String speacilty){
-        super(name, email);
+    public Doctor(String name, String email, int phoneNumber, String speacilty){
+        super(name, email, phoneNumber);
         this.speacilty=speacilty;
         id++;
     }
+
 
     // Metodos
     public void printData(){
@@ -16,5 +17,10 @@ public class Doctor extends User {
     }
     public void printId(){
         System.out.println(id);
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + " Specialiity: " + speacilty + " Avaiilable: ";
     }
 }
