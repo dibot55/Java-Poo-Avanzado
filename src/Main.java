@@ -1,5 +1,7 @@
+import module.Anidacion;
+import module.Doctor;
+import module.Patient;
 import java.util.Date;
-
 public class Main {
     public static void main(String[] args) {
         Doctor doctor = new Doctor("Yeyo-san", "Yeyosan@amor.com",234234 , "Amar a Erika chan");
@@ -15,7 +17,7 @@ public class Main {
         fecha.addAvailableAppointment(new Date(), new Date().getTime());
         System.out.println(fecha);
         /*
-        for (Anidacion.AvailableAppointment arr: fecha.getAvailableAppointment()
+        for (module.Anidacion.AvailableAppointment arr: fecha.getAvailableAppointment()
              ) {
             System.out.println(arr.getDate() + " " + arr.getTime());
         }

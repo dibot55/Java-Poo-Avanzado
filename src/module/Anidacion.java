@@ -1,3 +1,4 @@
+package module;
 import java.util.ArrayList;
 import java.util.Date;
 public class Anidacion {
@@ -36,7 +37,7 @@ public class Anidacion {
 
     @Override
     public String toString() {
-        return "Anidacion{\n" +
+        return "module.Anidacion{\n" +
                 "availableAppointment=" + availableAppointment.toString() +
                 "\n}";
     }

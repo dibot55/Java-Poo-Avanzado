@@ -1,4 +1,8 @@
-public class Patient extends User{
+package module;
+
+import module.User;
+
+public class Patient extends User {
     // Modificadores de acceso
     private String birthday;
     private double weight;

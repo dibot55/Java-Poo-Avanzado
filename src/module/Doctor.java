@@ -1,3 +1,5 @@
+package module;
+
 public class Doctor extends User {
     // Atributos
     static int id = 0;

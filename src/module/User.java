@@ -1,3 +1,5 @@
+package module;
+
 public class User {
     private int id;
     private String name;
@@ -51,6 +53,6 @@ public class User {
     // Sobrecarga de metodos - Polimorfisimo
     @Override
     public String toString() {
-        return "User: " + name + ", Email: " + email + "\n Phone: " + phoneNumber;
+        return "module.User: " + name + ", Email: " + email + "\n Phone: " + phoneNumber;
     }
 }
