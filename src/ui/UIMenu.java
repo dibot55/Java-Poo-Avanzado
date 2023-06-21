@@ -22,9 +22,10 @@ public class UIMenu {
             "Scary movie 19",
             "Power Rangers",
             "Terror en cookiezi"};
-
+    public static Doctor doctorLogged;
+    public static Patient patientLogged;
     public static void menuHospital(){
-        int response = 0;
+        int response;
         do {
             System.out.println("Selecciona el numero de la opcion deseada: /n");
             System.out.println("1.- Doctor /n");
@@ -41,12 +42,13 @@ public class UIMenu {
                     break;
                 case 1:
                     System.out.println("Doctor: ");
-                    for (int i=0; i<PELICULAS.length; i++) {
-                        System.out.println(PELICULAS[i]);
-                    }
+                    response = 0;
+                    auth(1);
                     break;
                 case 2:
                     System.out.println("Pacientes: ");
+                    response = 0;
+                    auth(2);
                     break;
                 default:
                     System.out.println("No hay nada :0");
@@ -54,6 +56,7 @@ public class UIMenu {
             }
         } while (response != 0);
     }
+    // Auth
     public static void auth(int typeUser){
         // auth -  Doctor
         ArrayList<Doctor> doctors = new ArrayList<>();
@@ -67,10 +70,27 @@ public class UIMenu {
 
         boolean emailCorrect = false;
         do {
+            // Scanner
             System.out.println("Inserta tu correo electronico: ");
             Scanner sc = new Scanner(System.in);
             String email = sc.nextLine();
-            // if (email == )
+            if (typeUser == 1){
+                for (Doctor doc: doctors
+                     ) {
+                    if (doc.getEmail().equals(email)){
+                        emailCorrect = true;
+                        doctorLogged = doc;
+                    }
+                }
+            } else if (typeUser == 2) {
+                for (Patient pat: patient
+                     ) {
+                    if (pat.getEmail().equals(email)){
+                        emailCorrect = true;
+                        patientLogged = pat;
+                    }
+                }
+            }
         } while (!emailCorrect);
     }
 }
