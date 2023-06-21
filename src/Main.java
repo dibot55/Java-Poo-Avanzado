@@ -1,6 +1,9 @@
 import module.Anidacion;
 import module.Doctor;
 import module.Patient;
+import module.User;
+import ui.UIMenu;
+
 import java.util.Date;
 public class Main {
     public static void main(String[] args) {
@@ -25,5 +28,18 @@ public class Main {
 
         Patient paciente = new Patient("yego", "yego@amor.com", 294234, 56.2);
         System.out.println(paciente);
+
+        // Clase Anonima
+        User user = new User("Diego", "dieibots@adsad.mp3", 3123213) {
+            @Override
+            public void showDataUser() {
+                System.out.println(getName() + " " + getEmail() + " " + getPhoneNumber());
+            }
+        };
+
+        user.showDataUser();
+
+        UIMenu menu = new UIMenu();
+        menu.menuHospital();
     }
 }
