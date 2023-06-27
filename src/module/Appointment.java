@@ -1,7 +1,7 @@
 package module;
 import java.util.ArrayList;
 import java.util.Date;
-public class Anidacion {
+public class Appointment {
     // Clase estatica anidada
     public static class AvailableAppointment{
         private Date date;

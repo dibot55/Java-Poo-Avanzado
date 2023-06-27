@@ -1,4 +1,4 @@
-import module.Anidacion;
+import module.Appointment;
 import module.Doctor;
 import module.Patient;
 import module.User;
@@ -14,7 +14,7 @@ public class Main {
         System.out.println(doctora);
 
         // Instanciar una clase anidada
-        Anidacion fecha = new Anidacion();
+        Appointment fecha = new Appointment();
         fecha.addAvailableAppointment(new Date(), new Date().getTime());
         fecha.addAvailableAppointment(new Date(), new Date().getTime());
         fecha.addAvailableAppointment(new Date(), new Date().getTime());

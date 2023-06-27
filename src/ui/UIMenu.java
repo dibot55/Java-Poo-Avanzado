@@ -9,19 +9,19 @@ import java.util.Scanner;
 public class UIMenu {
     // Constantes
     public static final double PI= 3.1415936;
-    public static final String[] PELICULAS={
-            "El coco",
-            "Minecraft",
-            "Invasion",
-            "Transformes",
-            "Rapidos y furiosos",
-            "Godzilla Nes",
-            "Animez",
-            "douluo",
-            "Cod of duty",
-            "Scary movie 19",
-            "Power Rangers",
-            "Terror en cookiezi"};
+    public static final String[] MONTHS={
+            "Enero",
+            "Febrero",
+            "Marzo",
+            "Abril",
+            "Mayo",
+            "Junio",
+            "Julio",
+            "Agosto",
+            "Septiembre",
+            "Octubre",
+            "Noviembre",
+            "Diciembre"};
     public static Doctor doctorLogged;
     public static Patient patientLogged;
     public static void menuHospital(){
