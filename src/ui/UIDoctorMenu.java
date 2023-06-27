@@ -46,14 +46,30 @@ public class UIDoctorMenu {
             response = Integer.valueOf(sc.nextLine());
 
             if (response > 0 && response <= 12) {
+                // Mes
                 int monthSelected = response;
                 System.out.println("Mes " + monthSelected + " . " + "Mes Confirmado " + UIMenu.MONTHS[monthSelected]);
-
+                // Fecha
                 System.out.println("Inserta la fecha en este formato: [dd/mm/yyyy]");
                 String date = sc.nextLine();
-
+                // Cambiar fecha
                 System.out.println("La fecha de tu cita es: " + date + "\n1.-Correcto\n2.-Cambiar la fecha");
-
+                int responseDate = Integer.valueOf(sc.nextLine());
+                if(responseDate == 2){
+                    continue;
+                }
+                // Hora
+                int responseTime = 0;
+                String time = "";
+                do {
+                    // date
+                    System.out.println("Ingresa la hora disponible para esta fecha " + date + " [03:00]");
+                    time = sc.nextLine();
+                    // Confirmacion
+                    System.out.println("La fecha de tu cita es: " + date + "\n1.-Correcto\n2.-Cambiar la fecha");
+                    responseTime = Integer.valueOf(sc.nextLine());
+                } while (responseTime == 2);
+                UIMenu.doctorLogged.addAvailableAppointment(date , time);
             } else if (response == 0) {
                 dotorMenuUI();
             }

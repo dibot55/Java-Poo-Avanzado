@@ -1,10 +1,8 @@
-import module.Appointment;
 import module.Doctor;
 import module.Patient;
 import module.User;
 import ui.UIMenu;
 
-import java.util.Date;
 public class Main {
     public static void main(String[] args) {
         Doctor doctor = new Doctor("Yeyo-san", "Yeyosan@amor.com",234234 , "Amar a Erika chan");
@@ -14,13 +12,15 @@ public class Main {
         System.out.println(doctora);
 
         // Instanciar una clase anidada
-        Appointment fecha = new Appointment();
+        //Appointment fecha = new Appointment();
+        /*
         fecha.addAvailableAppointment(new Date(), new Date().getTime());
         fecha.addAvailableAppointment(new Date(), new Date().getTime());
         fecha.addAvailableAppointment(new Date(), new Date().getTime());
         System.out.println(fecha);
+        */
         /*
-        for (module.Anidacion.AvailableAppointment arr: fecha.getAvailableAppointment()
+        for (module.Appointment.AvailableAppointment arr: fecha.getAvailableAppointment()
              ) {
             System.out.println(arr.getDate() + " " + arr.getTime());
         }

@@ -1,5 +1,7 @@
 package module;
 
+import java.util.ArrayList;
+
 public class Doctor extends User {
     // Atributos
     static int id = 0;
@@ -21,9 +23,44 @@ public class Doctor extends User {
         System.out.println(id);
     }
 
+    // Clase estatica anidada
+    public static class AvailableAppointment{
+        private String date;
+        private String time;
+        public AvailableAppointment(String date, String time){
+            this.date = date;
+            this.time = time;
+        }
+
+        public String getDate() {
+            return date;
+        }
+
+        public String getTime(){
+            return time;
+        }
+
+        @Override
+        public String toString() {
+            return "Available Apointment \nDate: " + getDate() + "\nTime: " + getTime();
+        }
+    }
+
+    // Coleccion
+    ArrayList<Doctor.AvailableAppointment> availableAppointment = new ArrayList<>();
+    public void addAvailableAppointment(String date, String time){
+        availableAppointment.add(new Doctor.AvailableAppointment(date, time));
+    }
+
+    public ArrayList<Doctor.AvailableAppointment> getAvailableAppointment(){
+        return availableAppointment;
+    }
+
     @Override
     public String toString() {
-        return super.toString() + " Specialiity: " + speacilty + " Avaiilable: ";
+        return "\n" +
+                super.toString() + " Specialiity: " + speacilty + " Available: " + availableAppointment.toString() +
+                "\n";
     }
 
     @Override
