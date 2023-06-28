@@ -5,7 +5,7 @@ import java.util.Date;
 public class AppointmentNurse implements ISchedule {
     private int id;
     private Nurse nurse;
-    private Date date;
+    private String date;
     private String time;
 
     public int getId() {
@@ -24,11 +24,11 @@ public class AppointmentNurse implements ISchedule {
         this.nurse = nurse;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
@@ -41,7 +41,8 @@ public class AppointmentNurse implements ISchedule {
     }
 
     @Override
-    public void schedule(Date date, String time) {
-
+    public void schedule(String date, String time) {
+        this.date=date;
+        this.time=time;
     }
 }

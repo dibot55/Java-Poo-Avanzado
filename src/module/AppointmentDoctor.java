@@ -2,16 +2,22 @@ package module;
 
 import module.interfaz.ISchedule;
 
-import java.util.Date;
 
 public class AppointmentDoctor implements ISchedule {
     // Atributos
     private int id;
     private Patient patient;
     private Doctor doctor;
-    private Date date;
+    private String date;
     private String time;
+    // Constructor
 
+    public AppointmentDoctor(Patient patient, Doctor doctor) {
+        this.patient = patient;
+        this.doctor = doctor;
+    }
+
+    // Metodos
     public int getId() {
         return id;
     }
@@ -36,16 +42,16 @@ public class AppointmentDoctor implements ISchedule {
         this.doctor = doctor;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
     public String getTime() {
-        return time;
+        return time + "hrs.";
     }
 
     public void setTime(String time) {
@@ -53,7 +59,8 @@ public class AppointmentDoctor implements ISchedule {
     }
 
     @Override
-    public void schedule(Date date, String time) {
-
+    public void schedule(String date, String time) {
+        this.date=date;
+        this.time=time;
     }
 }

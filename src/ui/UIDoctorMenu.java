@@ -1,8 +1,13 @@
 package ui;
 
+import module.Doctor;
+
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class UIDoctorMenu {
+    // Arreglo de citas doctores
+    public static ArrayList<Doctor> doctorsAvailableAppointment = new ArrayList<>();
     public static void dotorMenuUI(){
         int response = 0;
         System.out.println("\n\n");
@@ -17,6 +22,7 @@ public class UIDoctorMenu {
             response = Integer.valueOf(sc.nextLine());
             switch (response){
                 case 1:
+                    showAddAvailableAppointment();
                     break;
                 case 2:
                     break;
@@ -29,7 +35,7 @@ public class UIDoctorMenu {
         } while (response != 0);
     }
 
-    public static void showAddAvailableAppointment(){
+    private static void showAddAvailableAppointment(){
         int response = 0;
         do {
             System.out.println();
@@ -48,7 +54,7 @@ public class UIDoctorMenu {
             if (response > 0 && response <= 12) {
                 // Mes
                 int monthSelected = response;
-                System.out.println("Mes " + monthSelected + " . " + "Mes Confirmado " + UIMenu.MONTHS[monthSelected]);
+                System.out.println("Mes " + monthSelected + " . " + "Mes Confirmado " + UIMenu.MONTHS[monthSelected-1]);
                 // Fecha
                 System.out.println("Inserta la fecha en este formato: [dd/mm/yyyy]");
                 String date = sc.nextLine();
@@ -66,13 +72,23 @@ public class UIDoctorMenu {
                     System.out.println("Ingresa la hora disponible para esta fecha " + date + " [03:00]");
                     time = sc.nextLine();
                     // Confirmacion
-                    System.out.println("La fecha de tu cita es: " + date + "\n1.-Correcto\n2.-Cambiar la fecha");
+                    System.out.println("La Hora de tu cita es: " + time + "\n1.-Correcto\n2.-Cambiar la hora");
                     responseTime = Integer.valueOf(sc.nextLine());
                 } while (responseTime == 2);
+                // Agregar cita
                 UIMenu.doctorLogged.addAvailableAppointment(date , time);
+                checkDoctorAvailableAppointment(UIMenu.doctorLogged);
             } else if (response == 0) {
                 dotorMenuUI();
             }
         } while (response != 0);
+    }
+    // Citas disponibles
+    private static void checkDoctorAvailableAppointment(Doctor doctor){
+        if (doctor.getAvailableAppointment().size() >= 0 && !doctorsAvailableAppointment.contains(doctor)) {
+            doctorsAvailableAppointment.add(doctor);
+        } else if (doctorsAvailableAppointment.contains(doctor)) {
+            System.out.println("La cita ya existe");
+        }
     }
 }

@@ -6,14 +6,13 @@ public class Doctor extends User {
     // Atributos
     static int id = 0;
     String speacilty;
-
+    private ArrayList<Doctor.AvailableAppointment> availableAppointment = new ArrayList<>();
     // Constructor
     public Doctor(String name, String email, int phoneNumber, String speacilty){
         super(name, email, phoneNumber);
         this.speacilty=speacilty;
         id++;
     }
-
 
     // Metodos
     public void printData(){
@@ -31,15 +30,12 @@ public class Doctor extends User {
             this.date = date;
             this.time = time;
         }
-
         public String getDate() {
             return date;
         }
-
         public String getTime(){
             return time;
         }
-
         @Override
         public String toString() {
             return "Available Apointment \nDate: " + getDate() + "\nTime: " + getTime();
@@ -47,22 +43,18 @@ public class Doctor extends User {
     }
 
     // Coleccion
-    ArrayList<Doctor.AvailableAppointment> availableAppointment = new ArrayList<>();
     public void addAvailableAppointment(String date, String time){
         availableAppointment.add(new Doctor.AvailableAppointment(date, time));
     }
-
     public ArrayList<Doctor.AvailableAppointment> getAvailableAppointment(){
         return availableAppointment;
     }
-
     @Override
     public String toString() {
         return "\n" +
                 super.toString() + " Specialiity: " + speacilty + " Available: " + availableAppointment.toString() +
                 "\n";
     }
-
     @Override
     public void showDataUser() {
         System.out.println("Hospital: Cruz roja");

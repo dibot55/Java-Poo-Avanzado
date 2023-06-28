@@ -6,7 +6,7 @@ import module.Patient;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class UIMenu {
+public abstract class UIMenu {
     // Constantes
     public static final double PI= 3.1415936;
     public static final String[] MONTHS={
@@ -79,7 +79,10 @@ public class UIMenu {
                      ) {
                     if (doc.getEmail().equals(email)){
                         emailCorrect = true;
+                        // Logged
                         doctorLogged = doc;
+                        // Menu Doctor
+                        UIDoctorMenu.dotorMenuUI();
                     }
                 }
             } else if (typeUser == 2) {
@@ -87,7 +90,10 @@ public class UIMenu {
                      ) {
                     if (pat.getEmail().equals(email)){
                         emailCorrect = true;
+                        //Logged
                         patientLogged = pat;
+                        // Menu Patient
+                        UIPatientMenu.patientMenuUI();
                     }
                 }
             }
